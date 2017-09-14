@@ -1,0 +1,16 @@
+body{
+    margin: 3%;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.list-group > li {
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+}
