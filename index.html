@@ -16,17 +16,14 @@
   <body ng-controller="myController as employeesList">
     <div class="container-fluid">
                 
-        <h2>List of departments</h2>      
-        <ul class="list-group col-md-10">
-            <li><h3>Tea</h3>
-                <ol>
-                     <li class="list-group-item">
-                     </li>
-                     <li class="list-group-item">           
-                     </li>
-                </ol>
-            </li>
-        </ul>
+        <h2>List of departments</h2>
+            <ul class="list-group col-md-10">
+                <li ng-repeat="department in departments"><h3>{{department._id}}</h3>
+                    <ol>
+                        <li class="list-group-item" ng-repeat="name in department.names">{{name}}</li>
+                    </ol>
+                </li>
+            </ul>
        
     </div>
 
@@ -34,8 +31,8 @@
             {{employeesList.dataL}}
     </div>
     
-    <div ng-repeat="prop in employeesList.departments">
-            {{prop.name}}
+    <div ng-repeat="prop in employeesList.employees.d"> 
+        {{employeesList.employees.d[prop]dep}}    
     </div>
     
   </body>
