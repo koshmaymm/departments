@@ -18,11 +18,12 @@
                 
         <h2>List of departments</h2>
             <ul class="list-group col-md-10">
-                
-                <li ng-repeat="department in departments"><h3>{{department._id}}</h3>
-                    <button type="button" class="btn btn-info">Add</button>
-                    <button type="button" class="btn btn-warning">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                <input class="form-control" type="text" placeholder="Selected department" ng-model="dataLL">
+
+                <li ng-repeat="department in departments" ng-show="department._id !== undefined"><h3>{{department._id}}</h3>
+                    <button type="button" class="btn btn-info" ng-click="addDepartment(department._id)">Add</button>
+                    <button type="button" class="btn btn-warning" ng-click="editDepartment(department._id)">Edit</button>
+                    <button type="button" class="btn btn-danger" ng-click="delDepartment(department._id)">Delete</button>
                     <button type="button" class="btn btn-success" ng-click="showList = !showList">To List</button>
                     <br><br>
                     <ol>
@@ -30,12 +31,8 @@
                     </ol>
                 </li>
             </ul>
-       
+
     </div>
-<hr><hr>
-    <div>   <p>!!!</p>
-            {{dataL}}
-    </div>
-    
+
   </body>
 </html>
