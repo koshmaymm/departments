@@ -1,4 +1,4 @@
-body{
+body {
     margin: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
@@ -16,6 +16,7 @@ h2 {
     margin-left: 10px;
 }
 
-.form-control{
+.form-control,
+li {
     max-width: 300px;
 }
