@@ -1,38 +1,36 @@
 <!doctype html>
 <html ng-app="myApp">
-  <head>
+
+<head>
     <title>Employees From Different Departments</title>
-    <meta charset="utf-8"/>
-  
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"> </head>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body ng-controller="myController as employeesList">
+<body ng-controller="myController as employeesList">
     <div class="container-fluid">
-                
         <h2>List of departments</h2>
-            <ul class="list-group col-md-10">
-                <input class="form-control" type="text" placeholder="Selected department" ng-model="dataLL">
-
-                <li ng-repeat="department in departments" ng-show="department._id !== undefined"><h3>{{department._id}}</h3>
-                    <button type="button" class="btn btn-info" ng-click="addDepartment(department._id)">Add</button>
-                    <button type="button" class="btn btn-warning" ng-click="editDepartment(department._id)">Edit</button>
-                    <button type="button" class="btn btn-danger" ng-click="delDepartment(department._id)">Delete</button>
-                    <button type="button" class="btn btn-success" ng-click="showList = !showList">To List</button>
-                    <br><br>
-                    <ol>
-                        <li class="list-group-item" ng-repeat="name in department.names" ng-show="showList">{{name}}</li>
-                    </ol>
-                </li>
-            </ul>
-
+        <ul class="list-group col-md-10">
+            <input class="form-control" type="text" placeholder="Selected department" ng-model="dataEmployee">
+            <li ng-repeat="department in departments" ng-show="department._id !== undefined">
+                <h3>{{department._id}}</h3>
+                <button type="button" class="btn btn-info" ng-click="addDepartment(department._id)">Add</button>
+                <button type="button" class="btn btn-warning" ng-click="editDepartment(department._id)">Edit</button>
+                <button type="button" class="btn btn-danger" ng-click="delDepartment(department._id)">Delete</button>
+                <button type="button" class="btn btn-success" ng-click="showList = !showList">To List</button>
+                <br>
+                <br>
+                <ol>
+                    <li class="list-group-item" ng-repeat="name in department.names" ng-show="showList">{{name}}</li>
+                </ol>
+            </li>
+        </ul>
     </div>
+</body>
 
-  </body>
 </html>
