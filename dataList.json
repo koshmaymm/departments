@@ -2,35 +2,28 @@
     "_id": "Programming",
     "index": 0,
     "names": [
-        "Liam", "Emma", "Noah", "Olivia", "Mason", "Ava", "Ethan", "Sophia", "Logan", "Isabella",
-        "Lucas", "Mia", "Jackson", "Charlotte", "Aiden", "Amelia", "Oliver", "Emily"
+        "Liam", "Emma", "Noah", "Olivia", "Mason", "Ava", "Ethan", "Sophia", "Logan", "Isabella", "Lucas", "Mia", "Jackson", "Charlotte", "Aiden", "Amelia", "Oliver", "Emily"
     ]
-},
-{
+}, {
     "_id": "UI/UX",
     "index": 1,
     "names": [
-        "Jacob", "Madison", "Elijah", "Harper",	"Alexander", "Abigail", "James", "Avery", "Benjamin", "Lily"
+        "Jacob", "Madison", "Elijah", "Harper", "Alexander", "Abigail", "James", "Avery", "Benjamin", "Lily"
     ]
-},
-{
+}, {
     "_id": "Testing",
     "index": 2,
-    "names": [
-    ]
-},
-{
+    "names": []
+}, {
     "_id": "Sales",
     "index": 3,
     "names": [
-        "Jack",	"Ella",	"Luke",	"Chloe", "William", "Evelyn", "Matthew", "Sofia", "Owen", "Aria", "Daniel",	"Ellie"
+        "Jack", "Ella", "Luke", "Chloe", "William", "Evelyn", "Matthew", "Sofia", "Owen", "Aria", "Daniel", "Ellie"
     ]
-},
-{
+}, {
     "_id": "Marketing",
     "index": 4,
     "names": [
-        "Carter", "Aubrey",	"Gabriel", "Scarlett", "Henry"
+        "Carter", "Aubrey", "Gabriel", "Scarlett", "Henry"
     ]
-}
-]
+}]
