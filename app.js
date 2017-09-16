@@ -8,6 +8,7 @@ window.onload = function () {
         .controller('myController', function ($scope, APIservice) {
             APIservice.getData().then(function (response) {
                 $scope.departments = response.data;
+                $scope.dataL = "HI";
             });
         });
 }
