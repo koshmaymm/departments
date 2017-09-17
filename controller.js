@@ -21,12 +21,20 @@
             if ($scope.dataEmployee !== val) {
                 return;
             }
-            for (var i = 0; i < $scope.departments.length; i++) {
+            /*for (var i = 0; i < $scope.departments.length; i++) {
                 if ($scope.departments[i]._id == val) {
                     $scope.departments[i]._id = undefined;
                     $scope.dataEmployee = undefined;
                 }
-            }
+            }*/
+
+            angular.forEach($scope.departments, function(value, key) {
+                if ($scope.departments[key]._id == val) {
+                    $scope.departments[key]._id = undefined;
+                    $scope.dataEmployee = undefined;
+                }
+            });
+
         }).then(function(response) {
             $scope.departments = response.data;
             $scope.dataEmployee;
