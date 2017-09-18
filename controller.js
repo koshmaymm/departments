@@ -4,11 +4,17 @@
             $scope.dataEmployee;
 
             $scope.addDepartment = function(val) {
-                angular.forEach($scope.departments, function(value, key) {
+                /*angular.forEach($scope.departments, function(value, key) {
                     if ($scope.departments[key]._id == val) {
                         $scope.dataEmployee = $scope.departments[key]._id;
                     }
+                });*/
+                $scope.departments.push({
+                    "_id": val,
+                    "index": ($scope.departments.length + 1),
+                    "names": []
                 });
+                $scope.dataEmployee = undefined;
             };
             
             $scope.editDepartment = function(val) {
@@ -24,9 +30,6 @@
             };
 
             $scope.delDepartment = function(val) {
-                if ($scope.dataEmployee !== val) {
-                    return;
-                }
                 angular.forEach($scope.departments, function(value, key) {
                     if ($scope.departments[key]._id == val) {
                         $scope.departments[key]._id = undefined;
