@@ -13,18 +13,18 @@
     <div class="container-fluid">
         <h2>List of departments</h2>
         <br>
-        <button type="button" class="btn btn-info" ng-click="addDepartment(dataEmployee)">Add</button>
-        <button type="button" class="btn btn-warning" ng-click="editDepartment(dataEmployee)">Edit</button>
-        <button type="button" class="btn btn-danger" ng-click="delDepartment(dataEmployee)" title="You will delete the last department" data-placement="right">Delete</button>
+        <button type="button" class="btn btn-info" ng-click="addDepartment(dataDepartment)">Add</button>
+        <button type="button" class="btn btn-warning" ng-click="editDepartment(dataDepartment)">Edit</button>
+        <button type="button" class="btn btn-danger" ng-click="delDepartment(dataDepartment)" title="You will delete the last department" data-placement="right">Delete</button>
         <br>
         <br>
-        <form id="myForm">
+        <form id="myForm" ng-model="clearRadio">
             <ul class="list-group col-md-10">
-                <input class="form-control" type="text" placeholder="Enter Department Name" ng-model="dataEmployee">
+                <input class="form-control" type="text" placeholder="Enter Department Name" ng-model="dataDepartment">
                 <li ng-repeat="department in departments" ng-show="department._id !== undefined">
                     <h3>{{department._id}}</h3>
 
-                    <input type="radio" name="departmentGroup" ng-click="getIndex(department._id)" ng-model="clearRadio">
+                    <input type="radio" name="departmentGroup" ng-click="getIndex(department._id)">
                     <button type="button" class="btn btn-success" ng-click="showList = !showList">To List</button>
                     <ol>
                         <li class="list-group-item" ng-repeat="name in department.names" ng-show="showList">{{name}}</li>
