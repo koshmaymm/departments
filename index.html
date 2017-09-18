@@ -18,7 +18,7 @@
         <button type="button" class="btn btn-danger" ng-click="delDepartment(dataDepartment)" title="You will delete the last department" data-placement="right">Delete</button>
         <br>
         <br>
-        <form id="myForm" ng-model="clearRadio">
+        <form id="myForm">
             <ul class="list-group col-md-10">
                 <input class="form-control" type="text" placeholder="Enter Department Name" ng-model="dataDepartment">
                 <li ng-repeat="department in departments" ng-show="department._id !== undefined">
