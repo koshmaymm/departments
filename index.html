@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"> </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
 <body ng-controller="myController as employeesList" class="ng-cloak">
     <div class="container-fluid">
         <h2>List of departments</h2>
         <br>
-        <button type="button" class="btn btn-info" ng-click="addDepartment(dataEmployee)">Add</button>
-        <button type="button" class="btn btn-warning" ng-click="editDepartment()">Edit</button>
-        <button type="button" class="btn btn-danger" ng-click="delDepartment()">Delete</button>
-        <br> <br>
+        <button type="button" class="btn btn-info" ng-click="addDepartment(departmentName)">Add</button>
+        <button type="button" class="btn btn-warning" ng-click="editDepartment(department.index)">Edit</button>
+        <button type="button" class="btn btn-danger" ng-click="delDepartment()" title="You will delete the last department" data-placement="right">Delete</button>
+        
+        <br><br>
         <ul class="list-group col-md-10">
-            <input class="form-control" type="text" placeholder="Selected department" ng-model="dataEmployee">
-            <br>            
+            <input class="form-control" type="text" placeholder="Enter Department Name" ng-model="departmentName">            
             <li ng-repeat="department in departments" ng-show="department._id !== undefined">
                 <h3>{{department._id}}</h3>
-                
+                <input type="radio" name="departmentGroup" ng-click="getIndex(department.index)">
                 <button type="button" class="btn btn-success" ng-click="showList = !showList">To List</button>
                 <ol>
                     <li class="list-group-item" ng-repeat="name in department.names" ng-show="showList">{{name}}</li>
