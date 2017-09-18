@@ -20,7 +20,6 @@ h2 {
     max-width: 300px;
 }
 
-.btn {
-    max-width: 100px;
-    margin: 5px;
+ol > li {
+    max-width: 160px !important;
 }
