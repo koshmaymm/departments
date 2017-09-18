@@ -1,8 +1,7 @@
     angular.module('myApp').controller('myController', function($scope, APIservice) {
-        $scope.dataEmployee;
+        $scope.dataDepartment;
         $scope.departmentForEditOrDelete;
-        $scope.clearRadio = false;
-
+        $scope.chekedDepartment = myForm;
         APIservice.getData().then(function(response) {
             $scope.departments = response.data;
         });
@@ -17,13 +16,13 @@
         };
 
         $scope.editDepartment = function(val) {
-            if (!$scope.dataEmployee) {
+            if (!$scope.dataDepartment) {
                 return;
             }
 
             angular.forEach($scope.departments, function(value, key) {
                 if ($scope.departments[key]._id === $scope.departmentForEditOrDelete) {
-                    $scope.departments[key]._id = $scope.dataEmployee;
+                    $scope.departments[key]._id = $scope.dataDepartment;
                     
                 }
             });
@@ -49,8 +48,7 @@
         }
 
         $scope.clearData = function() {
-            $scope.dataEmployee = undefined;
-            $scope.departmentForEditOrDelete;
-            $scope.clearRadio;
+            $scope.dataDepartment = undefined;
+            $scope.chekedDepartment.reset();          
         }
     });
