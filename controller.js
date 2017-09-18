@@ -1,6 +1,7 @@
     angular.module('myApp').controller('myController', function($scope, APIservice) {
         $scope.dataEmployee;
         $scope.departmentForEditOrDelete;
+        $scope.clearRadio = false;
 
         APIservice.getData().then(function(response) {
             $scope.departments = response.data;
@@ -23,10 +24,10 @@
             angular.forEach($scope.departments, function(value, key) {
                 if ($scope.departments[key]._id === $scope.departmentForEditOrDelete) {
                     $scope.departments[key]._id = $scope.dataEmployee;
-                    $scope.clearData();
+                    
                 }
-
             });
+            $scope.clearData();
         };
 
         $scope.delDepartment = function(val) {
@@ -50,6 +51,6 @@
         $scope.clearData = function() {
             $scope.dataEmployee = undefined;
             $scope.departmentForEditOrDelete;
-            document.getElementById("myForm").reset();
+            $scope.clearRadio;
         }
     });
